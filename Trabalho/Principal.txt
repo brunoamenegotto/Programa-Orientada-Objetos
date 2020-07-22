@@ -1,0 +1,38 @@
+import java.util.Arrays;
+public class Principal
+{
+    public static void main(String[] args)
+    {
+    	Data datanasc = new Data(02,01,1998);
+    	int i;
+    	double salariosemadicional;
+    	double salariocomadicional;
+    	double diferencadesalarios;;
+
+		salariosemadicional = 0;
+    	salariocomadicional = 0;
+    	diferencadesalarios = 0;
+
+    	Funcionario vetor[] = new Funcionario[6];
+
+  		vetor[0] = new Funcionario("Bruno","98804-4969",datanasc,1000,565);
+		vetor[1] = new Funcionario("Gilson",datanasc,1200,262);
+		vetor[2] = new FuncionarioEnsinoMedio("Paty","99845-5661",datanasc,1250,232,"Regente");
+		vetor[3] = new FuncionarioEnsinoMedio("Ana",datanasc,2000,840,"SESI");
+		vetor[4] = new FuncionarioGraduacao("Kelwin","99494-9495",datanasc,2560,166,"SESI","Quimica");
+		vetor[5] = new FuncionarioGraduacao("Mateus",datanasc,5650,942,"Regente","Computação");
+
+    	for(i = 0; i < vetor.length; i++)
+    	{
+    		System.out.println("\n"+vetor[i]);
+
+			salariosemadicional = salariosemadicional + vetor[i].getSalario();
+    		salariocomadicional = salariocomadicional + vetor[i].getSalarioComAdicional();
+		}
+    		diferencadesalarios = salariosemadicional - salariocomadicional;
+
+    	System.out.println("\nTotal de salarios sem adicional: "+salariosemadicional);
+    	System.out.println("\nTotal de salarios com adicional: "+salariocomadicional);
+    	System.out.println("\nDiferença dos salarios: "+Math.abs(diferencadesalarios));
+    }
+}

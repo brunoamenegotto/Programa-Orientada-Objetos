@@ -1,0 +1,29 @@
+public class FuncionarioEnsinoMedio extends Funcionario
+{
+	private String nome_colegio;
+
+	public FuncionarioEnsinoMedio (String n, String t, Data dn, double s, int c, String nc)
+	{
+		super (n, t, dn, s, c);
+		nome_colegio = nc;
+	}
+	public FuncionarioEnsinoMedio (String n, Data dn, double s, int c, String nc)
+	{
+		super (n, dn, s, c);
+		nome_colegio = nc;
+	}
+	public String getNome_Colegio()
+	{
+		return nome_colegio;
+	}
+	public double getSalarioComAdicional()
+	{
+		return getSalario() * 1.1;
+	}
+	public String toString()
+	{
+		String aux;
+		aux = super.toString()+"\nNome do Colegio: "+nome_colegio;
+		return aux;
+	}
+}

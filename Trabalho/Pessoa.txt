@@ -1,0 +1,25 @@
+public abstract class Pessoa
+{
+	private String nome;
+	private String telefone;
+	private Data datanasc;
+
+	public Pessoa (String n, String t, Data dn)
+	{
+		nome = n;
+		telefone = t;
+		datanasc = dn;
+	}
+	public Pessoa (String n, Data dn)
+	{
+		nome = n;
+		datanasc = dn;
+	}
+	public abstract double getSalarioComAdicional();
+	public String toString()
+	{
+		String aux;
+		aux = "Nome: "+nome+"\nData de Nascimento: "+datanasc+"\nTelefone: "+telefone;
+		return aux;
+	}
+}
